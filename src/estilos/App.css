@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+}
+
+.navBar {
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contBuscador {
+  display: flex;
+  margin: 50px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.navBar > h2 {
+  color: whitesmoke;
+}
+
+#formSearch {
+  width: 50%;
+  margin: 0 10px;
+}
+
+.contIconos {
+  margin: 10px 120px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.animate__flash {
+  animation: 4s linear infinite;
+}
+
+@media screen and (max-width: 500px) {
+  .contBuscador {
+    padding: 0;
+  }
+
+  .navBar {
+    width: 100%;
+  }
+
+  .contIconos {
+    margin: 10px 20px;
+  }
+
+  .animate__flash {
+    width: 80px;
+  }
+}

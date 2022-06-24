@@ -1,0 +1,88 @@
+.contClima {
+  margin: 20px 180px;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.contCard {
+  background-color: white;
+  margin: 20px 80px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contClima2 {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  align-items: center;
+}
+
+.cards {
+  position: absolute;
+  top: 70%;
+  color: white;
+}
+
+.contClima2 > img {
+  width: 100%;
+  height: 60vh;
+}
+
+.contInfo {
+  margin: 10px;
+}
+
+.contExtra {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 2px solid black;
+}
+
+.contPronos {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: whitesmoke;
+  padding: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .contClima {
+    margin: 20px 60px;
+  }
+
+  .cards {
+    top: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contClima {
+    margin: 20px;
+  }
+
+  .contCard {
+    margin: 10px;
+  }
+
+  .cards {
+    top: 50%;
+  }
+
+  .contClima2 > img {
+    height: 50vh;
+  }
+
+  .contPronos {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+}
