@@ -16,13 +16,13 @@ function Card({ showData, loadingData, clima, pronostico }) {
 
   //iconos pronostico
   var iconUrl6 = "";
+  var iconUrl9 = "";
   var iconUrl12 = "";
-  var iconUrl18 = "";
 
   //fechas
-  var forecastDate6 = "";
-  var forecastDate12 = "";
-  var forecastDate18 = "";
+  var pronosDate6 = "";
+  var pronosDate9 = "";
+  var pronosDate12 = "";
 
   if (loadingData) {
     return <Button variant="dark" disabled>
@@ -34,10 +34,10 @@ function Card({ showData, loadingData, clima, pronostico }) {
     iconUrl = url + clima.weather[0].icon + ".png";
 
     iconUrl6 = url + pronostico.list[1].weather[0].icon + ".png";
-    iconUrl12 = url + pronostico.list[2].weather[0].icon + ".png";
-    iconUrl18 = url + pronostico.list[3].weather[0].icon + ".png";
+    iconUrl9 = url + pronostico.list[2].weather[0].icon + ".png";
+    iconUrl12 = url + pronostico.list[3].weather[0].icon + ".png";
 
-    forecastDate6 =
+    pronosDate6 =
       pronostico.list[1].dt_txt.substring(8, 10) +
       "/" +
       pronostico.list[1].dt_txt.substring(5, 7) +
@@ -46,7 +46,7 @@ function Card({ showData, loadingData, clima, pronostico }) {
       " " +
       pronostico.list[1].dt_txt.substring(11, 13);
 
-    forecastDate12 =
+      pronosDate9 =
       pronostico.list[2].dt_txt.substring(8, 10) +
       "/" +
       pronostico.list[2].dt_txt.substring(5, 7) +
@@ -55,7 +55,7 @@ function Card({ showData, loadingData, clima, pronostico }) {
       " " +
       pronostico.list[2].dt_txt.substring(11, 13);
 
-    forecastDate18 =
+      pronosDate12 =
       pronostico.list[4].dt_txt.substring(8, 10) +
       "/" +
       pronostico.list[3].dt_txt.substring(5, 7) +
@@ -94,22 +94,22 @@ function Card({ showData, loadingData, clima, pronostico }) {
 
             <div className="contPronos">
               <div>
-                <p>{forecastDate6}h</p>
+                <p>{pronosDate6}h</p>
                 <p className="description"><img src={iconUrl6} alt="icon"/>
                 {pronostico.list[1].weather[0].description}
                 </p>
                 <p className="temp">{(pronostico.list[1].main.temp - 273.15).toFixed(1)}ºC</p>
               </div>
               <div>
-                <p>{forecastDate12}h</p>
-                <p className="description"><img src={iconUrl12} alt="icon" />
+                <p>{pronosDate9}h</p>
+                <p className="description"><img src={iconUrl9} alt="icon" />
                   {pronostico.list[2].weather[0].description}
                 </p>
                 <p className="temp">{(pronostico.list[2].main.temp - 273.15).toFixed(1)}ºC</p>
               </div>
               <div>
-                <p>{forecastDate18}h</p>
-                <p className="description"><img src={iconUrl18} alt="icon" />
+                <p>{pronosDate12}h</p>
+                <p className="description"><img src={iconUrl12} alt="icon" />
                   {pronostico.list[3].weather[0].description}
                 </p>
                 <p className="temp">{(pronostico.list[3].main.temp - 273.15).toFixed(1)}ºC</p>
