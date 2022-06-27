@@ -7,10 +7,10 @@ import "animate.css";
 
 function PanelClima() {
   let urlClima =
-    "https://api.openweathermap.org/data/2.5/weather?&appid=9eae981a056e2b75e9afaa5cb8c05ef5&lang=es";
+    "https://api.openweathermap.org/data/2.5/weather?appid=9eae981a056e2b75e9afaa5cb8c05ef5&lang=es";
   let ciudadUrl = "&q=";
   let urlPronostico =
-    "https://api.openweathermap.org/data/2.5/forecast?&appid=9eae981a056e2b75e9afaa5cb8c05ef5&lang=es";
+    "https://api.openweathermap.org/data/2.5/forecast?appid=9eae981a056e2b75e9afaa5cb8c05ef5&lang=es";
 
   const [clima, setClima] = useState([]);
   const [pronostico, setPronostico] = useState([]);

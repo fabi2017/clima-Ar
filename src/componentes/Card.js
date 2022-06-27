@@ -15,14 +15,14 @@ function Card({ showData, loadingData, clima, pronostico }) {
   var iconUrl = "";
 
   //iconos pronostico
+  var iconUrl3 = "";
   var iconUrl6 = "";
   var iconUrl9 = "";
-  var iconUrl12 = "";
 
   //fechas
+  var pronosDate3 = "";
   var pronosDate6 = "";
   var pronosDate9 = "";
-  var pronosDate12 = "";
 
   if (loadingData) {
     return <Button variant="dark" disabled>
@@ -33,11 +33,20 @@ function Card({ showData, loadingData, clima, pronostico }) {
     url = "http://openweathermap.org/img/w/";
     iconUrl = url + clima.weather[0].icon + ".png";
 
+    iconUrl3 = url + pronostico.list[0].weather[0].icon + ".png";
     iconUrl6 = url + pronostico.list[1].weather[0].icon + ".png";
     iconUrl9 = url + pronostico.list[2].weather[0].icon + ".png";
-    iconUrl12 = url + pronostico.list[3].weather[0].icon + ".png";
 
-    pronosDate6 =
+    pronosDate3 =
+      pronostico.list[0].dt_txt.substring(8, 10) +
+      "/" +
+      pronostico.list[0].dt_txt.substring(5, 7) +
+      "/" +
+      pronostico.list[0].dt_txt.substring(0, 4) +
+      " " +
+      pronostico.list[0].dt_txt.substring(11, 13);
+
+      pronosDate6 =
       pronostico.list[1].dt_txt.substring(8, 10) +
       "/" +
       pronostico.list[1].dt_txt.substring(5, 7) +
@@ -54,15 +63,6 @@ function Card({ showData, loadingData, clima, pronostico }) {
       pronostico.list[2].dt_txt.substring(0, 4) +
       " " +
       pronostico.list[2].dt_txt.substring(11, 13);
-
-      pronosDate12 =
-      pronostico.list[4].dt_txt.substring(8, 10) +
-      "/" +
-      pronostico.list[3].dt_txt.substring(5, 7) +
-      "/" +
-      pronostico.list[3].dt_txt.substring(0, 4) +
-      " " +
-      pronostico.list[3].dt_txt.substring(11, 13);
   }
 
   return (
@@ -94,9 +94,16 @@ function Card({ showData, loadingData, clima, pronostico }) {
 
             <div className="contPronos">
               <div>
+                <p>{pronosDate3}h</p>
+                <p className="description"><img src={iconUrl3} alt="icon"/>
+                {pronostico.list[0].weather[0].description}
+                </p>
+                <p className="temp">{(pronostico.list[0].main.temp - 273.15).toFixed(1)}ºC</p>
+              </div>
+              <div>
                 <p>{pronosDate6}h</p>
-                <p className="description"><img src={iconUrl6} alt="icon"/>
-                {pronostico.list[1].weather[0].description}
+                <p className="description"><img src={iconUrl6} alt="icon" />
+                  {pronostico.list[1].weather[0].description}
                 </p>
                 <p className="temp">{(pronostico.list[1].main.temp - 273.15).toFixed(1)}ºC</p>
               </div>
@@ -106,13 +113,6 @@ function Card({ showData, loadingData, clima, pronostico }) {
                   {pronostico.list[2].weather[0].description}
                 </p>
                 <p className="temp">{(pronostico.list[2].main.temp - 273.15).toFixed(1)}ºC</p>
-              </div>
-              <div>
-                <p>{pronosDate12}h</p>
-                <p className="description"><img src={iconUrl12} alt="icon" />
-                  {pronostico.list[3].weather[0].description}
-                </p>
-                <p className="temp">{(pronostico.list[3].main.temp - 273.15).toFixed(1)}ºC</p>
               </div>
             </div>
           </div>
