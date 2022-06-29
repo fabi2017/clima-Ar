@@ -33,36 +33,36 @@ function Card({ showData, loadingData, clima, pronostico }) {
     url = "http://openweathermap.org/img/w/";
     iconUrl = url + clima.weather[0].icon + ".png";
 
-    iconUrl3 = url + pronostico.list[0].weather[0].icon + ".png";
-    iconUrl6 = url + pronostico.list[1].weather[0].icon + ".png";
-    iconUrl9 = url + pronostico.list[2].weather[0].icon + ".png";
+    iconUrl3 = url + pronostico.list[1].weather[0].icon + ".png";
+    iconUrl6 = url + pronostico.list[2].weather[0].icon + ".png";
+    iconUrl9 = url + pronostico.list[3].weather[0].icon + ".png";
 
     pronosDate3 =
-      pronostico.list[0].dt_txt.substring(8, 10) +
-      "/" +
-      pronostico.list[0].dt_txt.substring(5, 7) +
-      "/" +
-      pronostico.list[0].dt_txt.substring(0, 4) +
-      " " +
-      pronostico.list[0].dt_txt.substring(11, 13);
-
-      pronosDate6 =
       pronostico.list[1].dt_txt.substring(8, 10) +
       "/" +
       pronostico.list[1].dt_txt.substring(5, 7) +
       "/" +
-      pronostico.list[1].dt_txt.substring(0, 4) +
+      pronostico.list[1].dt_txt.substring(2, 4) +
       " " +
-      pronostico.list[1].dt_txt.substring(11, 13);
+      pronostico.list[1].dt_txt.substring(12, 13);
 
-      pronosDate9 =
+      pronosDate6 =
       pronostico.list[2].dt_txt.substring(8, 10) +
       "/" +
       pronostico.list[2].dt_txt.substring(5, 7) +
       "/" +
-      pronostico.list[2].dt_txt.substring(0, 4) +
+      pronostico.list[2].dt_txt.substring(2, 4) +
       " " +
-      pronostico.list[2].dt_txt.substring(11, 13);
+      pronostico.list[2].dt_txt.substring(12, 13);
+
+      pronosDate9 =
+      pronostico.list[3].dt_txt.substring(8, 10) +
+      "/" +
+      pronostico.list[3].dt_txt.substring(5, 7) +
+      "/" +
+      pronostico.list[3].dt_txt.substring(2, 4) +
+      " " + 
+      pronostico.list[3].dt_txt.substring(12, 13);
   }
 
   return (
@@ -91,28 +91,28 @@ function Card({ showData, loadingData, clima, pronostico }) {
               <h5>Humedad: {clima.main.humidity}%</h5>
               <h5>Velocidad del viento: {clima.wind.speed}m/s</h5>
             </div>
-
-            <div className="contPronos">
+            <h4>Pronostico Extendido</h4>
+            <div className="contPronos">           
               <div>
-                <p>{pronosDate3}h</p>
+                <p>{pronosDate3}h proximas</p>
                 <p className="description"><img src={iconUrl3} alt="icon"/>
-                {pronostico.list[0].weather[0].description}
-                </p>
-                <p className="temp">{(pronostico.list[0].main.temp - 273.15).toFixed(1)}ºC</p>
-              </div>
-              <div>
-                <p>{pronosDate6}h</p>
-                <p className="description"><img src={iconUrl6} alt="icon" />
-                  {pronostico.list[1].weather[0].description}
+                {pronostico.list[1].weather[0].description}
                 </p>
                 <p className="temp">{(pronostico.list[1].main.temp - 273.15).toFixed(1)}ºC</p>
               </div>
               <div>
-                <p>{pronosDate9}h</p>
-                <p className="description"><img src={iconUrl9} alt="icon" />
+                <p>{pronosDate6}h proximas</p>
+                <p className="description"><img src={iconUrl6} alt="icon" />
                   {pronostico.list[2].weather[0].description}
                 </p>
                 <p className="temp">{(pronostico.list[2].main.temp - 273.15).toFixed(1)}ºC</p>
+              </div>
+              <div>
+                <p>{pronosDate9}h proximas</p>
+                <p className="description"><img src={iconUrl9} alt="icon" />
+                  {pronostico.list[3].weather[0].description}
+                </p>
+                <p className="temp">{(pronostico.list[3].main.temp - 273.15).toFixed(1)}ºC</p>
               </div>
             </div>
           </div>
