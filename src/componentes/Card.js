@@ -94,21 +94,21 @@ function Card({ showData, loadingData, clima, pronostico }) {
             <h4>Pronostico Extendido</h4>
             <div className="contPronos">           
               <div>
-                <p>{pronosDate3}h proximas</p>
+                <p>{pronosDate3}h</p>
                 <p className="description"><img src={iconUrl3} alt="icon"/>
                 {pronostico.list[0].weather[0].description}
                 </p>
                 <p className="temp">{(pronostico.list[0].main.temp - 273.15).toFixed(1)}ºC</p>
               </div>
               <div>
-                <p>{pronosDate6}h proximas</p>
+                <p>{pronosDate6}h</p>
                 <p className="description"><img src={iconUrl6} alt="icon" />
                   {pronostico.list[1].weather[0].description}
                 </p>
                 <p className="temp">{(pronostico.list[1].main.temp - 273.15).toFixed(1)}ºC</p>
               </div>
               <div>
-                <p>{pronosDate9}h proximas</p>
+                <p>{pronosDate9}h</p>
                 <p className="description"><img src={iconUrl9} alt="icon" />
                   {pronostico.list[2].weather[0].description}
                 </p>
