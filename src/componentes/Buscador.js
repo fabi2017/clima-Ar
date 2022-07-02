@@ -23,7 +23,7 @@ function Buscador({ newLocalizacion }) {
         onChange={(e) => setCiudad(e.target.value)}
       />
       <Button variant="dark" type="submit">
-        Search
+        Buscar
       </Button>
     </Form>
   );
